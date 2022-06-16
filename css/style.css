@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.mainBox{
+    width: 100%;
+    height: auto;
+}
+
+.mainBox .inputBox{
+    width: 500px;
+    height: auto;
+    margin: 100px auto;
+    padding: 50px 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px #c0c0c0;
+    text-align: center;
+}
+
+.mainBox .inputBox .form{
+    width: 100%;
+    height: auto;
+    padding: 20px 0 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.mainBox .inputBox h2{
+    color: #cd5d00;
+    font-family: monospace;
+    font-size: 19px;
+    margin: 0 0 10px;
+}
+
+.mainBox .inputBox .form input{
+    width: 70%;
+    padding: 5px;   
+    box-shadow: 2px 2px 1px #bfbfbf;
+    border: 1px solid #cd5d00;
+    border-radius: 6px 0 0 6px;
+}
+
+.mainBox .inputBox .form .button{
+    width: 30%;
+    background: rgb(255, 123, 0);
+    padding: 8px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    box-shadow: 2px 2px 1px #bfbfbf;
+    font-family: monospace;
+    border-radius: 0 6px 6px 0;
+}
+
+.mainBox .inputBox .form .button:hover{
+    cursor: pointer;
+    background: rgb(255, 145, 0);
+}
+
+
+.mainBox .inputBox .maxInputEnter{
+    margin: 0 0 10px 0;
+    display: flex;
+}
+
+.mainBox .inputBox .maxInputEnter p{
+    font-size: 12px;
+    color: #7f7f7f;
+    font-family: monospace;
+    margin: 0 5px 0 0;
+}
+
+.mainBox .inputBox .buttons{
+    width: 100%;
+    height: auto;
+    padding: 10px 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mainBox .inputBox .buttons .buttonDel, .mainBox .inputBox .buttons .buttonDone{
+    width: 45%;
+    background: rgb(255, 123, 0);
+    padding: 8px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    box-shadow: 2px 2px 1px #bfbfbf;
+    font-family: monospace;
+    border-radius: 6px;
+}
+
+.mainBox .inputBox .buttons .buttonDel:hover{
+    cursor: pointer;
+    background: rgb(255, 145, 0);
+}
+
+.mainBox .inputBox .buttons .buttonDone:hover{
+    cursor: pointer;
+    background: rgb(255, 145, 0);
+}
+
+.butDel{
+    width: 20%;
+    background: rgb(255, 123, 0);
+    padding: 5px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    font-family: monospace;
+    float: right;
+}
+
+.butDel:hover{
+    cursor: pointer;
+    background: rgb(255, 145, 0);
+}
+
+.mainBox .inputBox .outputBox{
+    width: 100%;
+    height: auto;
+    padding: 0 0 0 18px;
+} 
+
+.mainBox .inputBox .outputBox ul li{
+    border-bottom: 1px solid #c8c8c8;
+    padding: 8px 0;
+    text-align: left;
+    font-family: monospace;
+    font-size: 16px;
+}
