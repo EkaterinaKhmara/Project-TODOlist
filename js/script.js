@@ -8,7 +8,7 @@ const numberInput = document.getElementById("numInpt");
 
 
 inputVal.oninput = function(){
-    inputVal.value = inputVal.value.substring(0, 35);
+    inputVal.value = inputVal.value.substring(0, 45);
     const valEnterInpt = parseInt(numberInput.innerHTML, 10);
     const counting = valEnterInpt - 1;
         if(counting == -1) return 0;
@@ -17,7 +17,7 @@ inputVal.oninput = function(){
     document.onkeydown = function(e) {
         const countingBack = valEnterInpt + 1;
         if(e.keyCode === 8){ 
-            if(countingBack == 37) return 35;
+            if(countingBack == 47) return 45;
         numberInput.innerHTML = `${countingBack}`;
         }
     }
@@ -33,11 +33,11 @@ function clickAddButt(){
     if(inputVal.value.trim()){
         inputVal.style.border = "1px solid #cd5d00";
         ulVal.insertAdjacentHTML('beforeend', `<li>
-        <input type="checkbox" onclick="eventChkbox(event)" name="todoList">
-        <label contenteditable="true">${inputVal.value}</label>
-        <button class="butDel" onclick="delSomeTask(event)"><b>Delete</b></button></li>`);
+        <button class="butDel" onclick="delSomeTask(event)"><b>X</b></button>
+        <input class="chboxInput" type="checkbox" onclick="eventChkbox(event)" name="todoList">
+        <label class="label" contenteditable="true">${inputVal.value}</label></li>`);
         inputVal.value = "";
-        numberInput.innerHTML = "35";
+        numberInput.innerHTML = "45";
     }else{
         inputVal.style.border = "3px solid red";
     }
