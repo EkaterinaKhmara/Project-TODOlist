@@ -3,6 +3,7 @@ const inputVal = document.getElementById("item");
 const ulVal = document.getElementById("ulList");
 const delAllBut = document.getElementById("butDelAll");
 const doneAllTask = document.getElementById("butDoneAll");
+const delTaskSel = document.getElementById("butDelSel");
 const numberInput = document.getElementById("numInpt");
 
 
@@ -33,7 +34,7 @@ function clickAddButt(){
         inputVal.style.border = "1px solid #cd5d00";
         ulVal.insertAdjacentHTML('beforeend', `<li>
         <input type="checkbox" onclick="eventChkbox(event)" name="todoList">
-        <label>${inputVal.value}</label>
+        <label contenteditable="true">${inputVal.value}</label>
         <button class="butDel" onclick="delSomeTask(event)"><b>Delete</b></button></li>`);
         inputVal.value = "";
         numberInput.innerHTML = "35";
@@ -76,6 +77,11 @@ function selectAllLabels(){
     }
 }
 
+function deleteTasksSelectly(){
+    const allLiInpt = ulVal.querySelectorAll("li input:checked");
+    allLiInpt.forEach(allLiInpt => allLiInpt.parentNode.remove());
+}
+
 function delSomeTask(event){
     const button = event.currentTarget;
     button.parentNode.remove();
@@ -85,9 +91,10 @@ function clickDelButt(){
     ulVal.innerHTML = "";
 }
 
-
 btn.addEventListener("click", clickAddButt);
 
 doneAllTask.addEventListener("click", selectAllLabels);
 
 delAllBut.addEventListener("click", clickDelButt);
+
+delTaskSel.addEventListener("click", deleteTasksSelectly);
