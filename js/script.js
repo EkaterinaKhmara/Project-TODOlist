@@ -1,14 +1,38 @@
 const btn = document.getElementById("but");
 const inputVal = document.getElementById("item");
 const ulVal = document.getElementById("ulList");
+const btnS = document.getElementById("buttonS")
 const delAllBut = document.getElementById("butDelAll");
 const doneAllTask = document.getElementById("butDoneAll");
 const delTaskSel = document.getElementById("butDelSel");
 const numberInput = document.getElementById("numInpt");
 
+// LOCAL STORAGE
+const addListStorage = function(){
+    localStorage.setItem(`el`, ulVal.innerHTML);
+    localStorage.setItem('list', ulVal.childElementCount);
+    checkItemsOnList();
+};
+
+const getListStorage = function(){
+    if (localStorage.getItem('list') >= 1) {
+        ulVal.innerHTML = localStorage.getItem(`el`);
+        checkItemsOnList();
+    }
+};
+
+getListStorage();
+
+function checkItemsOnList(){
+    if(ulVal.childElementCount > 0){
+        btnS.style.display = "flex";
+    }else if(ulVal.childElementCount <= 0){
+        btnS.style.display = "none";
+    }
+}
 
 inputVal.oninput = function(){
-    inputVal.value = inputVal.value.substring(0, 45);
+    inputVal.value = inputVal.value.substring(0, 65);
     const valEnterInpt = parseInt(numberInput.innerHTML, 10);
     const counting = valEnterInpt - 1;
         if(counting == -1) return 0;
@@ -17,11 +41,11 @@ inputVal.oninput = function(){
     document.onkeydown = function(e) {
         const countingBack = valEnterInpt + 1;
         if(e.keyCode === 8){ 
-            if(countingBack == 47) return 45;
+            if(countingBack == 67) return 65;
         numberInput.innerHTML = `${countingBack}`;
         }
     }
-    
+
     inputVal.onkeydown = function(e) {
         if(e.keyCode === 13){ 
             clickAddButt();
@@ -33,11 +57,16 @@ function clickAddButt(){
     if(inputVal.value.trim()){
         inputVal.style.border = "1px solid #cd5d00";
         ulVal.insertAdjacentHTML('beforeend', `<li>
-        <button class="butDel" onclick="delSomeTask(event)"><b>X</b></button>
+        <button class="butDel" onclick="delSomeTask(event)"><img src="img/close-icon.png" alt="delete"></button>
         <input class="chboxInput" type="checkbox" onclick="eventChkbox(event)" name="todoList">
         <label class="label" contenteditable="true">${inputVal.value}</label></li>`);
         inputVal.value = "";
-        numberInput.innerHTML = "45";
+        numberInput.innerHTML = "65";
+        checkItemsOnList();
+        addListStorage();
+        // LOCAL STORAGE
+        localStorage.setItem(`el`, ulVal.innerHTML);
+        localStorage.setItem('list', ulVal.childElementCount);
     }else{
         inputVal.style.border = "3px solid red";
     }
@@ -52,6 +81,10 @@ function eventChkbox(event){
         else if(inputChbox.checked == false){
             findLabel.style.textDecoration = "none";
         }
+        // LOCAL STORAGE
+        addListStorage();
+        localStorage.setItem(`el`, ulVal.innerHTML);
+        localStorage.setItem('list', ulVal.childElementCount);
 }
 
 function selectAllLabels(){
@@ -75,20 +108,39 @@ function selectAllLabels(){
             li.querySelector("label").style.textDecoration = "none";
         })
     }
+    // LOCAL STORAGE
+    addListStorage();
+    localStorage.setItem(`el`, ulVal.innerHTML);
+    localStorage.setItem('list', ulVal.childElementCount);
 }
 
 function deleteTasksSelectly(){
     const allLiInpt = ulVal.querySelectorAll("li input:checked");
     allLiInpt.forEach(allLiInpt => allLiInpt.parentNode.remove());
+    checkItemsOnList();
+    // LOCAL STORAGE
+    addListStorage();
+    localStorage.setItem(`el`, ulVal.innerHTML);
+    localStorage.setItem('list', ulVal.childElementCount);
 }
 
 function delSomeTask(event){
     const button = event.currentTarget;
     button.parentNode.remove();
+    checkItemsOnList();
+    // LOCAL STORAGE
+    addListStorage();
+    localStorage.setItem(`el`, ulVal.innerHTML);
+    localStorage.setItem('list', ulVal.childElementCount);
 }
 
 function clickDelButt(){
     ulVal.innerHTML = "";
+    btnS.style.display = "none";
+    // LOCAL STORAGE
+    addListStorage();
+    localStorage.setItem(`el`, ulVal.innerHTML);
+    localStorage.setItem('list', ulVal.childElementCount);
 }
 
 btn.addEventListener("click", clickAddButt);
