@@ -11,15 +11,28 @@
 </head>
 <body>
     <div class="mainBox" id="mainBox">
+        <div class="anotherLists" id="anotherLists">
+            <div class="description">
+                <p>Another lists <span>(Max 5 lists)</span></p>
+            </div>
+            <div class="listsBox">
+                <div class="lBox"><p><b>New list</b></p></div>
+                <div class="lBox"><p><b>New list</b></p></div>
+                <div class="lBox"><p><b>New list</b></p></div>
+                <div class="lBox"><p><b>New list</b></p></div>
+                <div class="lBox"><p><b>New list</b></p></div>
+                <div class="addNewList" id="addNewList"><p>+</p></div>
+            </div>
+        </div>
         <div class="inputBox" id="inputBox">
-            <h2>Add an item to the list</h2>
+            <h2 contenteditable="true">Name of my list</h2>
             <div class="form">
                 <input id="item" type="text" placeholder="Item">
                 <button class="button" id="but"><b>Add to list</b></button>
             </div>
             <div class="maxInputEnter" id="maxInputEnter">
                 <p>Max input: </p>
-                <p id="numInpt">65</p>
+                <p id="numInpt">60</p>
             </div>
             <div class="buttons" id="buttonS">
                 <button class="buttonDel" id="butDelAll"><b>Delete all</b></button>
@@ -27,7 +40,7 @@
                 <button class="buttonDone" id="butDoneAll"><b>Mark all task</b></button>
             </div>
             <div class="outputBox" id="outputBox">
-                <h2>Your list:</h2>
+                <h2>TODO:</h2>
                 <ul id="ulList"></ul>
             </div>
         </div>

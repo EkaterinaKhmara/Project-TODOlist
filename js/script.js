@@ -7,6 +7,13 @@ const doneAllTask = document.getElementById("butDoneAll");
 const delTaskSel = document.getElementById("butDelSel");
 const numberInput = document.getElementById("numInpt");
 
+
+// Открыта страница, она пуста. Как только юзер вводит первый элемент,
+// этот список автоматически попадает вверх в строку "новые списки"
+
+// добавить возможностиь удалить список из верхней строки
+
+
 // LOCAL STORAGE
 const addListStorage = function(){
     localStorage.setItem(`el`, ulVal.innerHTML);
@@ -32,7 +39,7 @@ function checkItemsOnList(){
 }
 
 inputVal.oninput = function(){
-    inputVal.value = inputVal.value.substring(0, 65);
+    inputVal.value = inputVal.value.substring(0, 60);
     const valEnterInpt = parseInt(numberInput.innerHTML, 10);
     const counting = valEnterInpt - 1;
         if(counting == -1) return 0;
@@ -41,7 +48,7 @@ inputVal.oninput = function(){
     document.onkeydown = function(e) {
         const countingBack = valEnterInpt + 1;
         if(e.keyCode === 8){ 
-            if(countingBack == 67) return 65;
+            if(countingBack == 62) return 60;
         numberInput.innerHTML = `${countingBack}`;
         }
     }
@@ -61,7 +68,7 @@ function clickAddButt(){
         <input class="chboxInput" type="checkbox" onclick="eventChkbox(event)" name="todoList">
         <label class="label" contenteditable="true">${inputVal.value}</label></li>`);
         inputVal.value = "";
-        numberInput.innerHTML = "65";
+        numberInput.innerHTML = "60";
         checkItemsOnList();
         addListStorage();
         // LOCAL STORAGE

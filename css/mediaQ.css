@@ -1,5 +1,9 @@
 @media (max-width: 720px){
-    .mainBox .inputBox{
+    .mainBox .anotherLists{
         margin: 0 auto;
+    }
+
+    .label{
+        overflow: scroll;
     }
 }
