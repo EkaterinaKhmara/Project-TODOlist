@@ -6,6 +6,20 @@ const delAllBut = document.getElementById("butDelAll");
 const doneAllTask = document.getElementById("butDoneAll");
 const delTaskSel = document.getElementById("butDelSel");
 const numberInput = document.getElementById("numInpt");
+const firstBoxList = document.getElementById("one");
+const changeName = document.getElementById("nameListChange");
+
+changeName.addEventListener("input", function() {
+    firstBoxList.style.display = "flex";
+    const valueName = changeName.innerText;
+    const nameBoxList = firstBoxList.querySelector("p b");
+    nameBoxList.innerHTML = valueName;
+    
+    // Изменить "настройки" для сохранения в памяти
+    addListStorage();
+    localStorage.setItem(`el`, ulVal.innerHTML);
+    localStorage.setItem('list', ulVal.childElementCount);
+}, false);
 
 
 // Открыта страница, она пуста. Как только юзер вводит первый элемент,
@@ -33,6 +47,8 @@ getListStorage();
 function checkItemsOnList(){
     if(ulVal.childElementCount > 0){
         btnS.style.display = "flex";
+        firstBoxList.style.display = "flex";
+
     }else if(ulVal.childElementCount <= 0){
         btnS.style.display = "none";
     }
