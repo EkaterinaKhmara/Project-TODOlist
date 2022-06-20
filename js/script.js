@@ -7,48 +7,55 @@ const doneAllTask = document.getElementById("butDoneAll");
 const delTaskSel = document.getElementById("butDelSel");
 const numberInput = document.getElementById("numInpt");
 const firstBoxList = document.getElementById("one");
+const secondBoxList = document.getElementById("two");
 const changeName = document.getElementById("nameListChange");
+const nameBoxList = firstBoxList.querySelector("p");
+const addNewTabButton = document.getElementById("addNewList");
 
-changeName.addEventListener("input", function() {
+const imgCloseTab = firstBoxList.querySelector("img");
+
+// function eCloseImg(event){
+//     const imgCloseBut = event.target;
+//     this.parentNode.remove();
+//     firstBoxList.style.display = "none";
+//     changeName.innerHTML = "Name of my list";
+//     nameBoxList.innerHTML = "Name of my list";
+//     ulVal.innerHTML = "";
+//         // LOCAL STORAGE
+//         addListStorage();
+//         localStorage.setItem(`el`, ulVal.innerHTML);
+//         localStorage.setItem('list', ulVal.childElementCount);
+// }
+
+function clickImgCloseTab(){
+    firstBoxList.style.display = "none";
+    changeName.innerHTML = "Name of my list";
+    nameBoxList.innerHTML = "Name of my list";
+    ulVal.innerHTML = "";
+}
+
+function addNewTab(){
+    if(firstBoxList){
+        secondBoxList.style.display = "flex";
+    }
+}
+
+addNewTabButton.addEventListener("click", addNewTab);
+
+
+
+function changeMainName(){
     firstBoxList.style.display = "flex";
     const valueName = changeName.innerText;
-    const nameBoxList = firstBoxList.querySelector("p b");
     nameBoxList.innerHTML = valueName;
-    
-    // Изменить "настройки" для сохранения в памяти
-    addListStorage();
-    localStorage.setItem(`el`, ulVal.innerHTML);
-    localStorage.setItem('list', ulVal.childElementCount);
-}, false);
-
-
-// Открыта страница, она пуста. Как только юзер вводит первый элемент,
-// этот список автоматически попадает вверх в строку "новые списки"
-
-// добавить возможностиь удалить список из верхней строки
-
-
-// LOCAL STORAGE
-const addListStorage = function(){
-    localStorage.setItem(`el`, ulVal.innerHTML);
-    localStorage.setItem('list', ulVal.childElementCount);
-    checkItemsOnList();
+    addNameStorage();
+    localStorage.setItem("name", valueName);
 };
-
-const getListStorage = function(){
-    if (localStorage.getItem('list') >= 1) {
-        ulVal.innerHTML = localStorage.getItem(`el`);
-        checkItemsOnList();
-    }
-};
-
-getListStorage();
 
 function checkItemsOnList(){
     if(ulVal.childElementCount > 0){
         btnS.style.display = "flex";
         firstBoxList.style.display = "flex";
-
     }else if(ulVal.childElementCount <= 0){
         btnS.style.display = "none";
     }
@@ -87,6 +94,7 @@ function clickAddButt(){
         numberInput.innerHTML = "60";
         checkItemsOnList();
         addListStorage();
+        console.log(ulVal.childElementCount);
         // LOCAL STORAGE
         localStorage.setItem(`el`, ulVal.innerHTML);
         localStorage.setItem('list', ulVal.childElementCount);
@@ -173,3 +181,69 @@ doneAllTask.addEventListener("click", selectAllLabels);
 delAllBut.addEventListener("click", clickDelButt);
 
 delTaskSel.addEventListener("click", deleteTasksSelectly);
+
+imgCloseTab.addEventListener("click", clickImgCloseTab);
+
+changeName.addEventListener("input", changeMainName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// firstBoxList.style.display = "none";
+// changeName.innerHTML = "Name of my list";
+// nameBoxList.innerHTML = "Name of my list";
+// ulVal.innerHTML = "";
+
+// const delTab = firstBoxList.style.display = "none";
+// const delMainName = changeName.innerHTML = "Name of my list";
+// const delTabName = nameBoxList.innerHTML = "Name of my list";
+// const delList = ulVal.innerHTML = "";
+
+// function clickImgCloseTab(){
+//     firstBoxList.style.display = "none";
+//     changeName.innerHTML = "Name of my list";
+//     nameBoxList.innerHTML = "Name of my list";
+//     ulVal.innerHTML = "";
+    // console.log(changeName.value);
+    // changeName.innerHTML = "Name of my list";
+    // nameBoxList.innerHTML = "Name of my list";
+    // clickDelButt();
+    // addDelTabStorage();
+    // localStorage.setItem("TabDel", document.innerHTML = delTab);
+    // localStorage.setItem("TabDel", document.innerHTML = delMainName);
+    // localStorage.setItem("TabDel", document.innerHTML = delTabName);
+    // localStorage.setItem("TabDel", document.innerHTML = delList);
+// }
+
+// const addDelTabStorage = function(){
+//     // localStorage.setItem("TabDel", delTab);
+//     // localStorage.setItem("MainNameDel", delMainName);
+//     // localStorage.setItem("TabNameDel", delTabName);
+//     // localStorage.setItem("ListDel", delList);
+//     // localStorage.setItem("TabDel", document.innerHTML = delTab);
+//     localStorage.setItem("TabDel", document.innerHTML = delMainName);
+//     localStorage.setItem("TabDel", document.innerHTML = delTabName);
+//     localStorage.setItem("TabDel", document.innerHTML = delList);
+// };
+
+// const getDelTabStorage = function(){
+//     // firstBoxList.innerHTML = localStorage.getItem("TabDel");
+//     changeName.innerHTML = localStorage.getItem("MainNameDel");
+//     nameBoxList.innerHTML = localStorage.getItem("TabNameDel");
+//     ulVal.innerHTML = localStorage.getItem("ListDel");  
+//     console.log(changeName.innerHTML = localStorage.getItem("MainNameDel"));  
+// };
+
+// getDelTabStorage();
