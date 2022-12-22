@@ -1,9 +1,83 @@
-@media (max-width: 720px){
-    .mainBox .anotherLists{
-        margin: 0 auto;
+@media (max-width: 500px) {
+
+    .mainBox .inputBox {
+        margin: 10px auto;
+        padding: 40px 12px;
     }
 
-    .label{
-        overflow: scroll;
+    .mainBox .inputBox .titleName {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mainBox .inputBox .titleName h3 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .mainBox .inputBox .titleName .editTitle {
+        width: 64px;
+    }
+
+    .mainBox .inputBox .buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mainBox .inputBox .buttons .buttonDel,
+    .mainBox .inputBox .buttons .buttonDone,
+    .mainBox .inputBox .buttons .buttonDelSelect {
+        width: 100%;
+    }
+
+    .butDel {
+        margin: 0 5px 0 0;
+    }
+
+    .chboxInput {
+        margin: 0 8px 0 5px;
+    }
+
+    .butEdit {
+        padding: 3px 10px;
+    }
+
+    .butSave {
+        padding: 3px 6px;
+    }
+
+}
+
+
+@media (min-width: 501px) and (max-width: 600px) {
+    .mainBox .inputBox {
+        margin: 10px auto;
+        padding: 40px 12px;
+    }
+
+    .mainBox .inputBox .titleName {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mainBox .inputBox .titleName h3 {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 760px) {
+    .mainBox .inputBox {
+        margin: 10px auto;
+        padding: 40px 12px;
+    }
+
+    .mainBox .inputBox .titleName h3 {
+        width: 70%;
+        padding: 0;
     }
 }

@@ -1,119 +1,76 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.mainBox{
-    width: 100%;
-    height: auto;
-}
-
-.mainBox .anotherLists{
-    max-width: 800px;
-    min-width: 550px;
-    height: auto;
-    margin: 100px auto 0;
-    border-left: 2px solid rgb(255, 123, 0);
-    border-top: 2px solid rgb(255, 123, 0);
-    border-right: 2px solid rgb(255, 123, 0);
-    border-radius: 11px 11px 0 0;
-}
-
-.mainBox .anotherLists .description{
-    width: 100%;
-    height: auto;
-}
-
-.mainBox .anotherLists .description p{
-   margin: 10px; 
-}
-
-.mainBox .anotherLists .description p, .mainBox .anotherLists .description span{
-    font-size: 12px;
-    color: #7f7f7f;
-    font-family: monospace;
-}
-
-.mainBox .anotherLists .description span{
-    font-style: italic;
-}
-
-.mainBox .anotherLists .listsBox{
-    width: 100%;
-    height: auto;
-    background: rgb(228, 228, 228);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.mainBox .anotherLists .listsBox .addNewList{
-    width: 10%;
-    height: 70px;
-    background: white;
-    border-radius: 7px;
-    border: 1px solid rgb(255, 123, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.mainBox .anotherLists .listsBox .addNewList p{
-    color: #b4580d;
-    font-family: monospace;
-    font-size: 25px;
-}
-
-.mainBox .anotherLists .listsBox .addNewList:hover{
+button {
     cursor: pointer;
-}
-
-.mainBox .anotherLists .listsBox .lBox{
-    width: 25%;
-    height: 70px;
-    background: rgb(252, 252, 252);
-    margin: 2px;
-    border-radius: 7px;
-    border: 1px solid rgb(255, 123, 0);
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    position: relative;
-}
-
-.mainBox .anotherLists .listsBox .lBox img{
-    width: 10%;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-}
-
-.mainBox .anotherLists .listsBox .lBox p{
-    color: #b4580d;
     font-family: monospace;
-    font-size: 16px;
-    text-align: center;
-}  
+}
 
-.mainBox .inputBox{
-    max-width: 800px;
-    min-width: 550px;
+.mainBox {
+    width: 100%;
     height: auto;
-    margin: 0 auto;
+}
+
+.mainBox .inputBox {
+    max-width: 800px;
+    min-width: 320px;
+    height: auto;
+    margin: 100px auto;
     padding: 50px 45px;
     display: flex;
     flex-direction: column;
-    border-left: 2px solid rgb(255, 123, 0);
-    border-bottom: 2px solid rgb(255, 123, 0);
-    border-right: 2px solid rgb(255, 123, 0);
+    border: 2px solid rgb(255, 123, 0);
     text-align: center;
-    border-radius: 0 0 11px 11px;
+    border-radius: 10px;
 }
 
-.mainBox .inputBox .form{
+.mainBox .inputBox .titleName {
+    width: 100%;
+    display: flex;
+    margin: 0 0 20px 0;
+    justify-content: space-between;
+}
+
+.mainBox .inputBox .titleName .editTitle,
+.mainBox .inputBox .titleName .saveTitle {
+    background: rgb(255 229 0);
+    border: none;
+    color: black;
+    box-shadow: 3px 3px 2px #bfbfbf;
+    font-family: monospace;
+    border-radius: 6px;
+}
+
+.mainBox .inputBox .titleName .editTitle {
+    padding: 5px 20px;
+}
+
+.mainBox .inputBox .titleName .editTitle:hover {
+    background: rgb(255, 243, 135);
+}
+
+.mainBox .inputBox .titleName .saveTitle {
+    padding: 5px 16px;
+    display: none;
+    background: #1a781a;
+    color: white;
+}
+
+.mainBox .inputBox .titleName .saveTitle:hover {
+    background: #046604;
+}
+
+.mainBox .inputBox .titleName h3 {
+    color: #414141;
+    font-family: monospace;
+    font-size: 20px;
+    padding: 0 200px;
+}
+
+.mainBox .inputBox .form {
     width: 100%;
     height: auto;
     padding: 20px 0 10px;
@@ -121,52 +78,42 @@
     flex-direction: row;
 }
 
-.mainBox .inputBox h2{
-    color: #414141;
-    font-family: monospace;
-    font-size: 20px;
-    margin: 0 0 10px;
-}
-
-.mainBox .inputBox .form input{
-    width: 75%;
-    padding: 5px;   
+.mainBox .inputBox .form input {
+    width: 80%;
+    padding: 5px;
     box-shadow: 2px 2px 1px #bfbfbf;
     border: 1px solid #cd5d00;
     border-radius: 6px 0 0 6px;
 }
 
-.mainBox .inputBox .form .button{
-    width: 25%;
+.mainBox .inputBox .form .button {
+    width: 20%;
     background: rgb(255, 123, 0);
     padding: 10px;
     border: none;
     color: white;
     font-size: 14px;
     box-shadow: 3px 3px 2px #bfbfbf;
-    font-family: monospace;
     border-radius: 0 6px 6px 0;
 }
 
-.mainBox .inputBox .form .button:hover{
-    cursor: pointer;
+.mainBox .inputBox .form .button:hover {
     background: rgb(255, 145, 0);
 }
 
-
-.mainBox .inputBox .maxInputEnter{
+.mainBox .inputBox .maxInputEnter {
     margin: 0 0 10px 0;
     display: flex;
 }
 
-.mainBox .inputBox .maxInputEnter p{
+.mainBox .inputBox .maxInputEnter p {
     font-size: 12px;
     color: #7f7f7f;
     font-family: monospace;
     margin: 0 5px 0 0;
 }
 
-.mainBox .inputBox .buttons{
+.mainBox .inputBox .buttons {
     width: 100%;
     height: auto;
     padding: 10px 0 50px;
@@ -175,7 +122,9 @@
     justify-content: space-between;
 }
 
-.mainBox .inputBox .buttons .buttonDel, .mainBox .inputBox .buttons .buttonDone, .mainBox .inputBox .buttons .buttonDelSelect{
+.mainBox .inputBox .buttons .buttonDel,
+.mainBox .inputBox .buttons .buttonDone,
+.mainBox .inputBox .buttons .buttonDelSelect {
     width: 30%;
     padding: 8px;
     border: none;
@@ -187,42 +136,39 @@
     background: #f8f8f8;
 }
 
-.mainBox .inputBox .buttons .buttonDel{
+.mainBox .inputBox .buttons .buttonDel {
     border: 2px solid rgb(255, 0, 0);
 }
 
-.mainBox .inputBox .buttons .buttonDone{
+.mainBox .inputBox .buttons .buttonDone {
     border: 2px solid rgb(45, 150, 24);
 }
 
-.mainBox .inputBox .buttons .buttonDelSelect{
+.mainBox .inputBox .buttons .buttonDelSelect {
     border: 2px solid rgb(255, 217, 0);
 }
 
-.mainBox .inputBox .buttons .buttonDel:hover{
-    cursor: pointer;
+.mainBox .inputBox .buttons .buttonDel:hover {
     background: white;
     color: rgb(255, 0, 0);
 }
 
-.mainBox .inputBox .buttons .buttonDelSelect:hover{
-    cursor: pointer;
+.mainBox .inputBox .buttons .buttonDelSelect:hover {
     background: white;
     color: rgb(190, 156, 3);
 }
 
-.mainBox .inputBox .buttons .buttonDone:hover{
-    cursor: pointer;
+.mainBox .inputBox .buttons .buttonDone:hover {
     background: white;
     color: rgb(45, 150, 24);
 }
 
-.mainBox .inputBox .outputBox{
+.mainBox .inputBox .outputBox {
     width: 100%;
     height: auto;
-} 
+}
 
-.mainBox .inputBox .outputBox ul li{
+.mainBox .inputBox .outputBox ul li {
     border-bottom: 1px solid #c8c8c8;
     padding: 8px 0;
     text-align: left;
@@ -234,23 +180,53 @@
     align-items: center;
 }
 
-.butDel{
+.butDel {
     border: none;
     margin: 0 15px 0 0;
     background: none;
 }
 
-.butDel:hover{
-    cursor: pointer;
+.butDel img {
+    width: 25px;
 }
 
-.label{
+.label {
+    width: 560px;
     padding: 5px;
+    margin: 0 8px 0 0;
 }
 
-.chboxInput{
+.chboxInput {
     transform: scale(1.6);
     opacity: 0.9;
-    cursor: pointer;
     margin: 0 15px 0 5px;
+}
+
+.butSave {
+    padding: 3px 15px;
+    display: none;
+    background: #1a781a;
+    color: white;
+    height: 28px;
+    border: none;
+    box-shadow: 3px 3px 2px #bfbfbf;
+    border-radius: 6px;
+}
+
+.butSave:hover {
+    background: #046604;
+}
+
+.butEdit {
+    padding: 3px 20px;
+    height: 28px;
+    background: rgb(255 229 0);
+    color: rgb(0, 0, 0);
+    border: none;
+    box-shadow: 3px 3px 2px #bfbfbf;
+    border-radius: 6px;
+}
+
+.butEdit:hover {
+    background: rgb(255, 243, 135);
 }

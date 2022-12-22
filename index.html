@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,37 +11,19 @@
     <script src="js/script.js" defer></script>
     <script src="js/storage.js" defer></script>
 </head>
+
 <body>
     <div class="mainBox" id="mainBox">
-        <div class="anotherLists" id="anotherLists">
-            <div class="description">
-                <p>Another lists <span>(Max 4 lists)</span></p>
-            </div>
-            <div class="listsBox">
-                <div class="lBox" id="one">
-                    <img src="img/close-icon.png" alt="delete">
-                    <p>Name of my list</p>
-                </div>
-                <div class="lBox" id="two">                    
-                    <img src="img/close-icon.png" alt="delete">
-                    <p>Name of my list</p>
-                </div>
-                <div class="lBox" id="three">
-                    <img src="img/close-icon.png" alt="delete">
-                    <p>Name of my list</p>
-                </div>
-                <div class="lBox" id="four">
-                    <img src="img/close-icon.png" alt="delete">
-                    <p>Name of my list</p>
-                </div>
-                <div class="addNewList" id="addNewList"><p>+</p></div>
-            </div>
-        </div>
         <div class="inputBox" id="inputBox">
-            <h2 id="nameListChange" contenteditable="true">Name of my list</h2>
+            <div class="titleName">
+                <p>List name:</p>
+                <h3 class="title" id="nameListChange">Name of my list</h3>
+                <button class="editTitle" id="editTitle">Edit</button>
+                <button class="saveTitle" id="saveTitle">Save</button>
+            </div>
             <div class="form">
                 <input id="item" type="text" placeholder="Item">
-                <button class="button" id="but"><b>Add to list</b></button>
+                <button class="button" id="but"><b>Add</b></button>
             </div>
             <div class="maxInputEnter" id="maxInputEnter">
                 <p>Max input: </p>
@@ -52,10 +35,11 @@
                 <button class="buttonDone" id="butDoneAll"><b>Mark all task</b></button>
             </div>
             <div class="outputBox" id="outputBox">
-                <h2>TODO:</h2>
+                <h3>TODO:</h3>
                 <ul id="ulList"></ul>
             </div>
         </div>
     </div>
 </body>
+
 </html>
